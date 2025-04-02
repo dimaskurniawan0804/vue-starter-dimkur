@@ -13,7 +13,10 @@ import PrimeVue from 'primevue/config'
 
 import { i18n } from './plugins/vi18n'
 
+import registerGlobalComponents from './plugins/global-components'
+
 const app = createApp(App)
+registerGlobalComponents(app)
 
 app.use(createPinia())
 app.use(router)

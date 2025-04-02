@@ -1,26 +1,10 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-function toggleDarkMode() {
-  document.documentElement.classList.toggle('dark')
-}
-const { locale, t } = useI18n({ useScope: 'global' })
-
-const updateLocale = () => {
-  locale.value = locale.value === 'en' ? 'id' : 'en'
-}
+import Home from './views/Home.vue'
 </script>
 
 <template>
   <div class="app">
-    <h1>THIS IS THE NEW WORLD</h1>
-    <Button label="Toggle Dark Mode" @click="toggleDarkMode()" />
-    <!--REMIX ICON-->
-    <i class="ri-admin-line"></i>
-    <!--PRIME ICON-->
-    <i class="pi pi-check"></i>
-
-    <Button label="Toggle Language" @click="updateLocale()" />
-    {{ t('hello') }}
+    <home />
   </div>
 </template>
 
@@ -28,13 +12,12 @@ const updateLocale = () => {
 .app {
   height: 100vh;
   width: 100vw;
-  display: flex;
-  flex-direction: column;
 }
 
 .dark {
   .app {
     // dark mode styles
+    background-color: #121212;
   }
 }
 </style>
